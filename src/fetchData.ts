@@ -6,4 +6,14 @@
  */
 
 // 請在下方寫下你的程式碼
-
+type resData = {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+};
+export async function fetchData(url: string): Promise<resData> {
+  const response = await fetch(url);
+  const data: resData = await response.json();
+  return data;
+}
